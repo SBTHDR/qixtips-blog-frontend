@@ -55,6 +55,7 @@
 <script>
     import NavbarLink from "./NavbarLink.vue";
     import { useToggle } from "@/composables/useToggle";
+    import { ref } from 'vue';
 
     export default {
         components: {
@@ -62,10 +63,21 @@
         },
         setup() {
             let { isVisible, toggle } = useToggle();
+            let showWhiteBackground = ref(false);
+
+            document.addEventListener("scroll", function () {
+                let bodyTopPosition = document.body.getBoundingClientRect().top;
+                if (bodyTopPosition < -150) {
+                    showWhiteBackground.value = true;
+                } else {
+                    showWhiteBackground.value = false;
+                }
+            });
 
             return {
                 isVisible,
                 toggle,
+                showWhiteBackground,
             };
         }
     }
