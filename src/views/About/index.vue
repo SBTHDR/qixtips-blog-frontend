@@ -1,5 +1,7 @@
 <template>
-  <div class="container mx-auto px-4 sm:px-0 py-8 sm:py-20"></div>
+  <div class="container mx-auto px-4 sm:px-0 py-8 sm:py-20">
+    About
+  </div>
 </template>
 
 <script>
